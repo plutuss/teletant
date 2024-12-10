@@ -21,12 +21,12 @@ class Log extends AbstractLogger
 
     /**
      * @param mixed $level
-     * @param string $message
+     * @param \Stringable|string $message
      * @param array $context
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, \Stringable|string $message, array $context = []): void
     {
-        if($this->logger instanceof LoggerInterface) {
+        if ($this->logger instanceof LoggerInterface) {
             $this->logger->log($level, $message, $context);
         }
     }
